@@ -1,13 +1,9 @@
 import React, { useCallback } from "react";
 
-const ResetButton = React.memo(({ isStarted, setTimer }) => {
+const ResetButton = React.memo(({ isStarted, setTimer,setLaps }) => {
   const resetTimer = useCallback(() => {
-    setTimer({
-      hour: 0,
-      min: 0,
-      sec: 0,
-      msec:0
-    });
+    setTimer(0);
+    setLaps([])
   }, [setTimer]);
   return (
     <div className="stop-watch-button">

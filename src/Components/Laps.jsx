@@ -8,10 +8,7 @@ const Laps = React.memo(({ totalLaps }) => {
         {totalLaps.length > 0 ? (
           totalLaps.map((data, index) => (
             <li key={index}>
-              {data.hour >= 10 ? data.hour : ` 0${data.hour}`} hr :
-              {data.min >= 10 ? data.min : ` 0${data.min}`} min :
-              {data.sec >= 10 ? data.sec : ` 0${data.sec}`} sec :
-              {data.msec >=100 ? ` ${Math.floor(data.msec / 10)}` : ` 0${Math.floor(data.msec / 10)}`} msec
+             {data}
             </li>
           ))
         ) : (

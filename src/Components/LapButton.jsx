@@ -1,8 +1,8 @@
 import React, { useCallback } from "react";
-
-const LapButton = React.memo(({ timer, setLaps,isStarted }) => {
+import { formattedTime } from "./FormatTimer";
+const LapButton = React.memo(({ timer,isStarted,setLaps }) => {
   const timerLap = useCallback(() => {
-    setLaps((pdata) => [...pdata, timer]);
+    setLaps((pdata) => [...pdata, formattedTime(timer)]);
   }, [setLaps, timer]);
 
   return (
